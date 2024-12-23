@@ -1,0 +1,12 @@
+image: python:3.9 
+pipelines:
+  default:
+    - step:
+        name: Install dependencies and run script
+        caches:
+          - pip
+        script:
+          - pip install --upgrade pip
+          - pip install -r requirements.txt  
+          - pip install dnspython 
+          - python dawood.py  
